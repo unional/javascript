@@ -41,6 +41,7 @@ Other Style Guides
   1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
   1. [ECMAScript 6 Styles](#ecmascript-6-styles)
   1. [Testing](#testing)
+  1. [Complexity](#complexity)
   1. [Performance](#performance)
   1. [Resources](#resources)
   1. [In the Wild](#in-the-wild)
@@ -2095,7 +2096,6 @@ Other Style Guides
 
   **[⬆ back to top](#table-of-contents)**
 
-
 ## jQuery
 
   - [25.1](#25.1) <a name='25.1'></a> Prefix jQuery object variables with a `$`.
@@ -2431,4 +2431,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 We encourage you to fork this guide and change the rules to fit your team's style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.
 
+## Complexity
+ - [u.1](#u.1) <a name='u.1'></a> Cyclomatic complexity should be kept under **7**. In the tools we allow up to **11**
+ 
+ eslint rules: ['complexity'](http://eslint.org/docs/rules/complexity).
 # };
