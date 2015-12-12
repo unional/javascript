@@ -1,0 +1,40 @@
+{
+  "name": "eslint-config-unional",
+  "version": "0.1.2",
+  "description": "Unional's ESLint config, following my styleguide, forked from airbnb",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "babel-tape-runner ./test/test-*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/unional/javascript"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "javascript",
+    "styleguide"
+  ],
+  "author": "Unional",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unional/javascript/issues"
+  },
+  "homepage": "https://github.com/unional/javascript",
+  "devDependencies": {
+    "babel-tape-runner": "1.2.0",
+    "eslint": "^1.8.0",
+    "eslint-plugin-react": "^3.7.1",
+    "react": "^0.13.3",
+    "tape": "^4.2.2"
+  },
+  "dependencies": {
+    "eslint-config-airbnb": "^2.0.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=1.0.0"
+  }
+}

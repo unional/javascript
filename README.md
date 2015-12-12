@@ -840,11 +840,11 @@ Other Style Guides
     module.exports = AirbnbStyleGuide.es6;
 
     // ok
-    import AirbnbStyleGuide from './AirbnbStyleGuide';
+    import AirbnbStyleGuide from './AirbnbStyleGuide.js';
     export default AirbnbStyleGuide.es6;
 
     // best
-    import { es6 } from './AirbnbStyleGuide';
+    import { es6 } from './AirbnbStyleGuide.js';
     export default es6;
     ```
 
@@ -854,24 +854,36 @@ Other Style Guides
 
     ```javascript
     // bad
-    import * as AirbnbStyleGuide from './AirbnbStyleGuide';
+    import * as AirbnbStyleGuide from './AirbnbStyleGuide.js';
 
     // good
-    import AirbnbStyleGuide from './AirbnbStyleGuide';
+    import AirbnbStyleGuide from './AirbnbStyleGuide.js';
     ```
 
-  - [10.3](#10.3) <a name='10.3'></a>And do not export directly from an import.
+  - ~~[10.3](#10.3) <a name='10.3'></a>And do not export directly from an import.~~
 
-  > Why? Although the one-liner is concise, having one clear way to import and one clear way to export makes things consistent.
+  > ~~Why? Although the one-liner is concise, having one clear way to import and one clear way to export makes things consistent.~~
 
+    ```javascriptM
+    // bad
+    export { es6 as default } from './airbnbStyleGuide.js';
+
+    // good
+    import { es6 } from './AirbnbStyleGuide.js';
+    export default es6;
+    ```
+  - [10.4](#10.4) <a name='10.4'></a>Includes file extension when you import local files.
+  
+  > Why? This is the recommendation from SystemJS, jspm, whatwg (TODO: Find the reference link)
+  
     ```javascript
     // bad
     // filename es6.js
-    export { es6 as default } from './airbnbStyleGuide';
+    export { es6 } from './airbnbStyleGuide';
 
     // good
     // filename es6.js
-    import { es6 } from './AirbnbStyleGuide';
+    import { es6 } from './AirbnbStyleGuide.js';
     export default es6;
     ```
 
@@ -1233,18 +1245,17 @@ Other Style Guides
     }
     ```
 
-  - [16.2](#16.2) <a name='16.2'></a> If you're using multi-line blocks with `if` and `else`, put `else` on the same line as your
-    `if` block's closing brace.
+  - [16.2](#16.2) <a name='16.2'></a> If you're using multi-line blocks with `if` and `else`, put `else` on the next line.
 
     eslint rules: [`brace-style`](http://eslint.org/docs/rules/brace-style.html).
+  > Why? Code collasping in editor would collaspse all cases into a single line, making it hard to read.
 
     ```javascript
     // bad
     if (test) {
       thing1();
       thing2();
-    }
-    else {
+    } else {
       thing3();
     }
 
@@ -1252,7 +1263,8 @@ Other Style Guides
     if (test) {
       thing1();
       thing2();
-    } else {
+    }
+    else {
       thing3();
     }
     ```
@@ -1361,31 +1373,31 @@ Other Style Guides
     }
     ```
 
+  - [17.6](#17.6) <a name='17.6'></a> Use `// FUTURE:` to annotate things to be consider in distint future
+
+    ```javascript
+    class Calculator extends Abacus {
+      constructor() {
+        super();
+
+        // FUTURE: total should be configurable by an options param
+        this.total = 0;
+      }
+    }
+    ```
+
 **[⬆ back to top](#table-of-contents)**
 
 
 ## Whitespace
 
-  - [18.1](#18.1) <a name='18.1'></a> Use soft tabs set to 2 spaces.
+  - [18.1](#18.1) <a name='18.1'></a> Use soft tabs set to 4 spaces in codes. 2 spaces in tools configurations.
 
   eslint rules: [`indent`](http://eslint.org/docs/rules/indent.html).
-
-    ```javascript
-    // bad
-    function () {
-    ∙∙∙∙const name;
-    }
-
-    // bad
-    function () {
-    ∙const name;
-    }
-
-    // good
-    function () {
-    ∙∙const name;
-    }
-    ```
+  
+  > Why? Many tools uses 2 spaces nowadays (`npm`, `jspm`, `gulp` etc).
+  > Many of them will automatically update the config files.
+  > We want to keep them in 2 spaces to avoid unnecessary chagnes.
 
   - [18.2](#18.2) <a name='18.2'></a> Place 1 space before the leading brace.
 
@@ -1477,9 +1489,10 @@ Other Style Guides
     })(this);↵
     ```
 
-  - [18.6](#18.6) <a name='18.6'></a> Use indentation when making long method chains. Use a leading dot, which
-    emphasizes that the line is a method call, not a new statement.
+  - [18.6](#18.6) <a name='18.6'></a> Do not indent when making long method chains. Use a leading dot, which emphasizes that the line is a method call, not a new statement. Place beginning of chain on a new line.
 
+  > Why? IDE auto-formatting cannot analyze your intent nor ignore your indentation. Keep it simple for the tool. 
+  
     ```javascript
     // bad
     $('#items').find('.selected').highlight().end().find('.open').updateCount();
@@ -1492,7 +1505,7 @@ Other Style Guides
       find('.open').
         updateCount();
 
-    // good
+    // bad
     $('#items')
       .find('.selected')
         .highlight()
@@ -1508,13 +1521,13 @@ Other Style Guides
 
     // good
     const leds = stage.selectAll('.led')
-        .data(data)
-      .enter().append('svg:svg')
-        .classed('led', true)
-        .attr('width', (radius + margin) * 2)
-      .append('svg:g')
-        .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
-        .call(tron.led);
+    .data(data)
+    .enter().append('svg:svg')
+    .classed('led', true)
+    .attr('width', (radius + margin) * 2)
+    .append('svg:g')
+    .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
+    .call(tron.led);
     ```
 
   - [18.7](#18.7) <a name='18.7'></a> Leave a blank line after blocks and before the next statement.
@@ -1962,13 +1975,13 @@ Other Style Guides
 
     // in some other file
     // bad
-    import CheckBox from './checkBox';
+    import CheckBox from './checkBox.js';
 
     // bad
-    import CheckBox from './check_box';
+    import CheckBox from './check_box.js';
 
     // good
-    import CheckBox from './CheckBox';
+    import CheckBox from './CheckBox.js';
     ```
 
   - [22.7](#22.7) <a name='22.7'></a> Use camelCase when you export-default a function. Your filename should be identical to your function's name.
@@ -2016,6 +2029,8 @@ Other Style Guides
 
   - [23.3](#23.3) <a name='23.3'></a> If the property is a `boolean`, use `isVal()` or `hasVal()`.
 
+  > Why? The property may be set with a value that evaluate as falsy.
+  
     ```javascript
     // bad
     if (!dragon.age()) {
