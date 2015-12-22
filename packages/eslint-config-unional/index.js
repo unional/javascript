@@ -6,6 +6,6 @@ module.exports = {
 
       // Stylistic Issues
 	  'brace-style': [2, 'stroustrup'],
-	  indent: [2, 4]
+	  indent: [2, 4, {'SwitchCase': 1, 'VariableDeclarator': 1}]
   }
 };
