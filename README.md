@@ -946,14 +946,9 @@ Other Style Guides
     ```
 
   - ~~[10.3](#10.3) <a name='10.3'></a>And do not export directly from an import.~~
+ > Why? Although the one-liner is concise, having one clear way to import and one clear way to export makes things consistent.
 
-<<<<<<< HEAD
-  > ~~Why? Although the one-liner is concise, having one clear way to import and one clear way to export makes things consistent.~~
-=======
-    > Why? Although the one-liner is concise, having one clear way to import and one clear way to export makes things consistent.
->>>>>>> airbnb/master
-
-    ```javascriptM
+    ```javascript
     // bad
     export { es6 as default } from './airbnbStyleGuide.js';
 
@@ -962,9 +957,9 @@ Other Style Guides
     export default es6;
     ```
   - [10.4](#10.4) <a name='10.4'></a>Includes file extension when you import local files.
-  
+
   > Why? This is the recommendation from SystemJS, jspm, whatwg (TODO: Find the reference link)
-  
+
     ```javascript
     // bad
     // filename es6.js
@@ -1478,17 +1473,12 @@ Other Style Guides
 
 **[⬆ back to top](#table-of-contents)**
 
-<<<<<<< HEAD
-=======
-    eslint rules: [`indent`](http://eslint.org/docs/rules/indent.html).
->>>>>>> airbnb/master
-
 ## Whitespace
 
   - [18.1](#18.1) <a name='18.1'></a> Use soft tabs set to 4 spaces in codes. 2 spaces in tools configurations.
 
   eslint rules: [`indent`](http://eslint.org/docs/rules/indent.html).
-  
+
   > Why? Many tools uses 2 spaces nowadays (`npm`, `jspm`, `gulp` etc).
   > Many of them will automatically update the config files.
   > We want to keep them in 2 spaces to avoid unnecessary chagnes.
@@ -1585,8 +1575,8 @@ Other Style Guides
 
   - [18.6](#18.6) <a name='18.6'></a> Do not indent when making long method chains. Use a leading dot, which emphasizes that the line is a method call, not a new statement. Place beginning of chain on a new line.
 
-  > Why? IDE auto-formatting cannot analyze your intent nor ignore your indentation. Keep it simple for the tool. 
-  
+  > Why? IDE auto-formatting cannot analyze your intent nor ignore your indentation. Keep it simple for the tool.
+
     ```javascript
     // bad
     $('#items').find('.selected').highlight().end().find('.open').updateCount();
@@ -2153,7 +2143,7 @@ Other Style Guides
   - [23.3](#23.3) <a name='23.3'></a> If the property is a `boolean`, use `isVal()` or `hasVal()`.
 
   > Why? The property may be set with a value that evaluate as falsy.
-  
+
     ```javascript
     // bad
     if (!dragon.age()) {
@@ -2557,6 +2547,6 @@ We encourage you to fork this guide and change the rules to fit your team's styl
 
 ## Complexity
  - [u.1](#u.1) <a name='u.1'></a> Cyclomatic complexity should be kept under **7**. In the tools we allow up to **11**
- 
+
  eslint rules: ['complexity'](http://eslint.org/docs/rules/complexity).
 # };
