@@ -26,13 +26,20 @@ module.exports = {
     // https://github.com/eslint/eslint/blob/master/docs/rules/indent.md
     'indent': [2, 2, { "SwitchCase": 1, "VariableDeclarator": 1 }],
     // specify whether double or single quotes should be used in JSX attributes
-    'jsx-quotes': 2,
+    // http://eslint.org/docs/rules/jsx-quotes
+    'jsx-quotes': [2, 'prefer-double'],
     // enforces spacing between keys and values in object literal properties
     'key-spacing': [2, {'beforeColon': false, 'afterColon': true}],
     // enforces empty lines around comments
     'lines-around-comment': 0,
     // disallow mixed 'LF' and 'CRLF' as linebreaks
     'linebreak-style': 0,
+    // specify the maximum length of a line in your program
+    // https://github.com/eslint/eslint/blob/master/docs/rules/max-len.md
+    'max-len': [2, 100, 2, {
+      'ignoreUrls': true,
+      'ignoreComments': false
+    }],
     // specify the maximum depth callbacks can be nested
     'max-nested-callbacks': 0,
     // require a capital letter for constructors
@@ -78,7 +85,8 @@ module.exports = {
     // enforce padding within blocks
     'padded-blocks': [2, 'never'],
     // require quotes around object literal property names
-    'quote-props': 0,
+    // http://eslint.org/docs/rules/quote-props.html
+    'quote-props': [2, 'as-needed', { 'keywords': false, 'unnecessary': true, 'numbers': false }],
     // specify whether double or single quotes should be used
     'quotes': [2, 'single', 'avoid-escape'],
     // require identifiers to match the provided regular expression

@@ -1,3 +1,35 @@
+3.0.2 / 2016-01-06
+==================
+ - [fix] Ignore URLs in `max-len` (#664)
+
+3.0.1 / 2016-01-06
+==================
+ - [fix] because we use babel, keywords should not be quoted
+
+3.0.0 / 2016-01-04
+==================
+ - [breaking] enable `quote-props` rule (#632)
+ - [breaking] Define a max line length of 100 characters (#639)
+ - [breaking] [react] Minor cleanup for the React styleguide, add `react/jsx-no-bind` (#619)
+ - [breaking] update best-practices config to prevent parameter object manipulation (#627)
+ - [minor] Enable react/no-is-mounted rule (#635, #633)
+ - [minor] Sort react/prefer-es6-class alphabetically (#634)
+ - [minor] enable react/prefer-es6-class rule
+ - Permit strict mode in "legacy" config
+ - [react] add missing rules from eslint-plugin-react (enforcing where necessary) (#581)
+ - [dev deps] update `eslint-plugin-react`
+
+2.1.1 / 2015-12-15
+==================
+ - [fix] Remove deprecated react/jsx-quotes (#622)
+
+2.1.0 / 2015-12-15
+==================
+ - [fix] use `require.resolve` to allow nested `extend`s (#582)
+ - [new] enable `object-shorthand` rule (#621)
+ - [new] enable `arrow-spacing` rule (#517)
+ - [docs] flesh out react rule defaults (#618)
+
 2.0.0 / 2015-12-03
 ==================
  - [breaking] `space-before-function-paren`: require function spacing: `function <optional name>(` (#605)
