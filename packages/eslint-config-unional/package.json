@@ -32,7 +32,7 @@
     "tape": "^4.4.0"
   },
   "dependencies": {
-    "eslint-config-airbnb": "^2.1.1"
+    "eslint-config-airbnb": "^3.0.2"
   },
   "peerDependencies": {
     "eslint": ">=1.0.0"
