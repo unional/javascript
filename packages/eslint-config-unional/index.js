@@ -5,7 +5,7 @@ module.exports = {
       complexity: [2, 11],
 
       // Stylistic Issues
-	  'brace-style': [2, 'stroustrup'],
+	  'brace-style': [2, 'stroustrup', { 'allowSingleLine': true }],
 	  indent: [2, 4, {'SwitchCase': 1, 'VariableDeclarator': 1}]
   }
 };
