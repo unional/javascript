@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-unional",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Unional's ESLint config, following my styleguide, forked from airbnb",
   "main": "index.js",
   "scripts": {
