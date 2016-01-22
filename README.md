@@ -1475,13 +1475,30 @@ Other Style Guides
 
 ## Whitespace
 
-  - [18.1](#18.1) <a name='18.1'></a> Use soft tabs set to 4 spaces in codes. 2 spaces in tools configurations.
+  - [18.1](#18.1) <a name='18.1'></a> Use soft tabs set to 2 spaces.
 
   eslint rules: [`indent`](http://eslint.org/docs/rules/indent.html).
 
   > Why? Many tools uses 2 spaces nowadays (`npm`, `jspm`, `gulp` etc).
   > Many of them will automatically update the config files.
-  > We want to keep them in 2 spaces to avoid unnecessary chagnes.
+  > We want to keep them in 2 spaces to avoid unnecessary changes.
+
+    ```javascript
+    // bad
+    `function () {
+    ∙∙∙∙const name;
+    }
+
+    // bad
+    function () {
+    ∙const name;
+    }
+
+    // good
+    function () {
+    ∙∙const name;
+    }
+    ```
 
   - [18.2](#18.2) <a name='18.2'></a> Place 1 space before the leading brace.
 
