@@ -1,0 +1,3 @@
+[submodule "packages/eslint-config-unional"]
+	path = packages/eslint-config-unional
+	url = https://github.com/unional/eslint-config-unional
